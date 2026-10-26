@@ -1,0 +1,38 @@
+body {
+    background-color: #F7F8FC;
+    color: #333333;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #2E2A78;
+    color: white;
+    padding: 20px;
+}
+
+a {
+    color: #FF8A00;
+}
+
+h2 {
+    color: #2E2A78;
+}
+
+.tagline {
+    color: #FFC27A;
+}
+
+#about {
+    background-color: white;
+    padding: 20px;
+}
+
+#skills {
+    background-color: white;
+    padding: 20px;
+}
+
+footer {
+    background-color: #E9EAF0;
+    padding: 20px;
+}
