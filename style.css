@@ -1,38 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Theme ke colors - ek jagah */
+:root {
+    --bg: #F7F8FC;
+    --text: #333333;
+    --card: white;
+    --primary: #2E2A78;
+}
+
 body {
-    background-color: #F7F8FC;
-    color: #333333;
-    font-family: Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Poppins", sans-serif;
+    margin: 0;
 }
 
 header {
     background-color: #2E2A78;
     color: white;
     padding: 20px;
+    position: relative;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    font-weight: 700;
 }
 
 a {
     color: #FF8A00;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+p {
+    line-height: 1.6;
+}
+
+nav a {
+    display: inline-block;
+    background-color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
 }
 
 h2 {
-    color: #2E2A78;
+    color: var(--primary);
+    letter-spacing: 1px;
 }
 
 .tagline {
     color: #FFC27A;
+    font-style: italic;
+    font-size: 1.1rem;
 }
 
 #about {
-    background-color: white;
+    background-color: var(--card);
     padding: 20px;
+    margin: 20px;
+    border-radius: 12px;
 }
 
 #skills {
-    background-color: white;
+    background-color: var(--card);
     padding: 20px;
+    margin: 20px;
+    border-radius: 12px;
+}
+
+#skills ul {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+#skills li {
+    background-color: #E9E6FF;
+    color: #2E2A78;
+    padding: 8px 16px;
+    border-radius: 20px;
 }
 
 footer {
-    background-color: #E9EAF0;
+    background-color: var(--card);
     padding: 20px;
+    text-align: center;
+}
+
+.badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #0F9D74;
+    padding: 6px 14px;
+    border-radius: 20px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@media (max-width: 600px) {
+    .badge {
+        position: static;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Nav links ka hover effect */
+nav a:hover {
+    background-color: #FF8A00;
+    color: white;
+}
+
+/* Cards hover pe thoda upar uthenge */
+section {
+    transition: all 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Photo hover pe ghoomegi aur badi hogi */
+#about img {
+    transition: all 0.5s ease;
+}
+
+#about img:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+
+/* Badge ki dhadkan - pulse animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Heading ke neeche orange line */
+h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #FF8A00;
+    border-radius: 2px;
+    margin-top: 8px;
+}
+
+/* Dark mode - checkbox tick hote hi colors badlo */
+body:has(#dark:checked) {
+    --bg: #12131C;
+    --text: #E8E8F0;
+    --card: #1E2030;
+    --primary: #A9A3FF;
+}
+
+* {
+    transition: background-color 0.4s ease;
 }
